@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lead Generator SaaS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <header class="card-header">
+        <p class="eyebrow">n8n + Apify Lead Engine</p>
+        <h1>Lead Generation Dashboard</h1>
+        <p class="subtitle">Dynamic workflow settings, smart suggestions, and one-click execution.</p>
+      </header>
+
+      <form id="leadForm">
+
+        <div class="field">
+          <label for="locationInput">Location</label>
+          <input type="text" id="locationInput" placeholder="Ontario, Canada">
+          <div id="locationSuggestions" class="suggestions"></div>
+        </div>
+
+        <div class="field">
+          <label for="keywordInput">Categories / Keywords</label>
+          <div class="input-group">
+            <input type="text" id="keywordInput" placeholder="HVAC contractor">
+            <button type="button" id="addKeywordBtn" class="secondary-btn">Add</button>
+          </div>
+          <div id="keywordTags" class="tags"></div>
+          <div id="keywordSuggestions" class="suggestions"></div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="maxLeads">Max Leads</label>
+            <input type="number" id="maxLeads" value="5" min="1" max="500">
+          </div>
+          <div class="field">
+            <label for="language">Language</label>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="fr">French</option>
+              <option value="es">Spanish</option>
+              <option value="de">German</option>
+              <option value="it">Italian</option>
+              <option value="pt">Portuguese</option>
+              <option value="nl">Dutch</option>
+              <option value="tr">Turkish</option>
+              <option value="ar">Arabic</option>
+              <option value="hi">Hindi</option>
+              <option value="bn">Bangla</option>
+            </select>
+          </div>
+        </div>
+
+        <details class="advanced">
+          <summary>Advanced Workflow Settings</summary>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="apifyToken">Apify API Token</label>
+              <input type="password" id="apifyToken" placeholder="apify_api_...">
+            </div>
+            <div class="field" hidden>
+              <label for="apifyActor">Apify Actor</label>
+              <input type="text" id="apifyActor" value="compass~google-maps-extractor">
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="maxCrawledPlacesPerSearch">Max Crawled Places Per Search</label>
+              <input type="number" id="maxCrawledPlacesPerSearch" value="1" min="1" max="500">
+            </div>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Start Lead Generation</button>
+          <button type="button" id="saveDefaultsBtn" class="secondary-btn">Save Defaults</button>
+        </div>
+      </form>
+
+      <div id="status" class="status"></div>
+
+      <section class="payload-preview-wrap">
+        <h3>Payload Preview</h3>
+        <pre id="payloadPreview" class="payload-preview"></pre>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
