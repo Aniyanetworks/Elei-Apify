@@ -27,14 +27,10 @@ const locationSuggestions = [
 ];
 
 const keywordSuggestions = [
-  "HVAC contractor",
-  "Plumber",
-  "Electrician",
-  "Heating contractor",
-  "Air conditioning contractor",
-  "Furnace repair service",
-  "Roofing contractor",
-  "Cleaning service"
+  "Roofers",
+  "Pressure Washing",
+  "Landscapers",
+  "Barbers"
 ];
 
 const state = {
@@ -185,7 +181,7 @@ function loadDefaults() {
   if (!raw) {
     state.location = "Ontario, Canada";
     locationInput.value = state.location;
-    state.keywords = ["HVAC contractor"];
+    state.keywords = ["Roofers"];
     return;
   }
 
@@ -215,11 +211,11 @@ function loadDefaults() {
     locationInput.value = state.location;
     state.keywords = Array.isArray(saved.keywords)
       ? saved.keywords.filter(Boolean)
-      : ["HVAC contractor"];
+      : ["Roofers"];
   } catch (_error) {
     state.location = "Ontario, Canada";
     locationInput.value = state.location;
-    state.keywords = ["HVAC contractor"];
+    state.keywords = ["Roofers"];
   }
 }
 
