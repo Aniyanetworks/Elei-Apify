@@ -13,7 +13,7 @@ const saveDefaultsBtn = document.getElementById("saveDefaultsBtn");
 const submitBtn = document.getElementById("submitBtn");
 
 const STORAGE_KEY = "leadGeneratorDefaults.v1";
-const WEBHOOK_URL = "https://n8n.srv1300653.hstgr.cloud/webhook/elei-lead";
+const WEBHOOK_URL = "https://n8n-gtqi.srv1813274.hstgr.cloud/webhook/elei-lead";
 
 const locationSuggestions = [
   "Ontario, Canada",
